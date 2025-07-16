@@ -1,98 +1,268 @@
-:root{--br: brown}
-::root{--ws: whitesmoke;
-  
-  }
-*{
+:root {
+  --br: brown;
+  --ws: whitesmoke;
+}
+
+/* إعادة ضبط القيم الأساسية للعناصر */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* إعدادات الجسم */
+body {
   background-color: rgb(0, 120, 10);
   color: white;
- }
- .header{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* رأس الموقع */
+.header {
   background-color: rgb(120, 0, 30);
-  }
-#log{
-  border-radius: 50% 50%;
-  margin: 50% 50%;
- }
- #th01,#ph,#qa{
-  background-color: whitesmoke; /*The variable named ws here did not work for me even though the code was correct, so I decided to replace it with the original color*/
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1.25em;
+  border-radius: 0.625em;
+}
+
+/* صورة الشعار */
+#log {
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.625em;
+}
+
+/* التنسيق العام لعنصر العنوان والوصف */
+#tay {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  margin-right: 4em;
+  margin-left: 3em;
+  justify-self: center;
+  justify-content: center;
+}
+
+/* العنوان والوصف وعنوان قائمة الوصول السريع */
+#th01,
+#ph,
+#qa {
+  background-color: var(--ws);
   color: black;
-  margin: 50% 50%;
-  width: 300px;
-  word-spacing: 1px;
-  }
-  .animal1,.animal2,.animal3,.animal4,.animal5{
-    background-color: white;
-    color: black;
-    border-radius: 50% 50%;
-    margin: 0.5px 0px;
-    padding: 10px;
-   }
-   .animal1:hover{
-    background-color: red;
+  padding: 0.313em 0.938em;
+  margin: 0.313em 0;
+  border-radius: 0.313em;
+  text-align: center;
+  max-width: fit-content;
+  place-self: center;
+}
+
+/* قائمة الوصول السريع */
+.quick-access {
+  margin-top: 0.938em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.625em;
+  justify-content: center;
+}
+
+/* أزرار الوصول السريع */
+.animal1,
+.animal2,
+.animal3,
+.animal4,
+.animal5 {
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  padding: 0.625em;
+  width: 3.75em;
+  height: 3.75em;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.625rem;
+  text-align: center;
+}
+
+/* تأثير التحويل عند المرور على الأزرار */
+.animal1:hover,
+.animal2:hover,
+.animal3:hover,
+.animal4:hover,
+.animal5:hover {
+  background-color: red;
   color: white;
-  border-radius: 15px;
-  width: 40px;
-  transition-delay: 0.5s;
-    }
-    .animal2:hover{
-      background-color: red;
-    color: white;
-    border-radius: 15px;
-    width: 40px;
-    transition-delay: 0.5s;
-     }
-     .animal3:hover{
-      background-color: red;
-    color: white;
-    border-radius: 15px;
-    width: 40px;
-    transition-delay: 0.5s;
-      }
-      .animal4:hover{
-        background-color: red;
-    color: white;
-    border-radius: 15px;
-    width: 40px;
-    transition-delay: 0.5s;
-       }
-       .animal5:hover{
-        background-color: red;
-    color: white;
-    border-radius: 15px;
-    width: 40px;
-    transition-delay: 0.5s;
-        }/*I rewrote the code for each button separately because: If we collect all the buttons together in one hover code, we will get the following problem: We will have 4 buttons stuck on the color and different hover settings that we set, while the fifth button works well, so I preferred to separate each button separately.*/
-        #si{
-         background-color: whitesmoke;
-         color: var(--br); 
-         font-family: sans-serif;
-         font-size: 18px;
-         width: 120px;
-        }
-h2{
+  border-radius: 0.938em;
+}
+
+/* المسافة العلوية للمحتوى الرئيسي */
+.main-content {
+  margin-top: 12.5em;
+}
+
+/* عنوان الفقرة التعريفية */
+#si {
+  background-color: whitesmoke;
+  color: var(--br); 
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.125rem;
+  width: fit-content;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 0.313em 0.938em;
+  border-radius: 0.313em;
+  place-self: center;
+}
+
+/* عناوين الأقسام */
+h2 {
   background-color: white;
   color: brown;
-  font-family: sans-serif;
-  font-size: 18px;
-  width: 120px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.125rem;
+  width: fit-content;
+  padding: 0.313em 0.938em;
+  margin-top: 1.25em;
+  border-radius: 0.313em;
 }
-.par{
-  line-space: 1.5px;
-font-family: 'Times New Roman', Times, serif;
-font-size: 18px;
-margin-top:20% ;
-margin-bottom: 40%;
-width: 300px;
- }
- .par::first-line{
+
+/* فقرات الوصف */
+.par {
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  margin-top: 1.25em;
+  margin-bottom: 2.5em;
+  max-width: 37.5em;
+}
+
+/* تمييز السطر الأول من الفقرة */
+.par::first-line {
   background-color: gold;
   color: black;
- }
- .li{
-  margin-top: 40%;
-  margin-bottom: 40%;
+}
+
+/* رابط الصورة */
+.li {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+  display: block;
+}
+
+/* تنسيق صورة الحيوان */
+.animal-img {
+  width: 100%;
+  max-width: 25em;
+  height: auto;
+  border-radius: 0.625em;
+  display: block;
+  margin: 0.625em auto;
+}
+
+/* زر الرجوع للأعلى */
+.back-btn {
+  background-color: white;
+  color: black;
+  border: 0.125em solid var(--br);
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.25em;
+  cursor: pointer;
+  display: block;
+  margin: 1.875em auto;
+  transition: all 0.3s ease;
+}
+
+/* تأثير الهوفر لزر الرجوع */
+.back-btn:hover {
+  background-color: #eee;
+  color: red;
+}
+
+/* الفوتر */
+.footer {
+  background-color: var(--ws);
+  color: var(--br);
+  text-align: center;
+  padding: 0.625em;
+  border-radius: 0.625em;
+  margin-top: 1.875em;
+}
+
+/* ميديا كويري للشاشات اللوحية (حتى 768px) */
+@media (max-width: 768px) {
+  body {
+    margin-left: 1em;
+    margin-right: 1em;
   }
-  .footer{
-    background-color: var(--ws);
-    color: var(--br);
-   }
+
+  .header {
+    flex-direction: r;
+    align-items: center;
+  }
+
+  #tay {
+    margin: 1em 3em;
+    align-items: center;
+  }
+
+  .quick-access {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-content{
+    margin-top: 18em;
+  }
+}
+
+/* ميديا كويري للهواتف (حتى 480px) */
+@media (max-width: 480px) {
+  body {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .animal1,
+  .animal2,
+  .animal3,
+  .animal4,
+  .animal5 {
+    width: 3em;
+    height: 3em;
+    font-size: 0.5rem;
+  }
+
+  #th01,
+  #ph,
+  #qa,
+  #si {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .par {
+    font-size: 0.875rem;
+  }
+
+  .back-btn {
+    width: 2em;
+    height: 2em;
+    font-size: 1em;
+  }
+}
